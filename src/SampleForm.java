@@ -28,6 +28,7 @@ public class SampleForm {
                 sampleButton.setText("");
                 upperCenterButton.setText("");
                 upperRightButton.setText("");
+                System.out.println("Reset the board");
             }
         });
     }

@@ -145,7 +145,54 @@ public class SampleForm {
                 this.setWinnerLabel(winner);
                 return;
             }
+
+            int diagonalChecker = 0;
+
+            for (int rowIndex = 0; rowIndex < this.grid.length; rowIndex++) {
+                for(int columnIndex = 0; columnIndex < this.grid[rowIndex].length; columnIndex++) {
+                    if (rowIndex == columnIndex) {
+                        diagonalChecker += this.grid[rowIndex][columnIndex];
+                    }
+                }
+            }
+
+            winner = checkDiagonalWinner(diagonalChecker);
+
+            if (winner != "") {
+                this.setWinnerLabel(winner);
+                return;
+            }
+
+            diagonalChecker = 0;
+            int columnIndexer = 0;
+
+            for (int rowIndex = 0; rowIndex < this.grid.length; rowIndex++) {
+                if (rowIndex == 0) {
+                    columnIndexer = this.grid[rowIndex].length - 1;
+                }
+
+                diagonalChecker += this.grid[rowIndex][columnIndexer];
+
+                columnIndexer -= 1;
+            }
+
+            winner = checkDiagonalWinner(diagonalChecker);
+
+            if (winner != "") {
+                this.setWinnerLabel(winner);
+                return;
+            }
         }
+    }
+
+    private String checkDiagonalWinner(int diagonalChecker) {
+        if (diagonalChecker == 3) {
+            return "X";
+        } else if (diagonalChecker == 0) {
+            return "O";
+        }
+
+        return "";
     }
 
     private String checkWinner(int[][] checkGrid) {

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d2978d9-d913-4a29-8b3b-c4c061ed4691" name="Changes" comment="add 2-player and row winning condition check">
+    <list default="true" id="4d2978d9-d913-4a29-8b3b-c4c061ed4691" name="Changes" comment="add checker for column winning condition">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SampleForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SampleForm.java" afterDir="false" />
     </list>
@@ -101,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680510414551</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add checker for column winning condition">
+      <created>1680511701191</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680511701191</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +126,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="add reset log" />
     <MESSAGE value="add 2-player and row winning condition check" />
-    <option name="LAST_COMMIT_MESSAGE" value="add 2-player and row winning condition check" />
+    <MESSAGE value="add checker for column winning condition" />
+    <option name="LAST_COMMIT_MESSAGE" value="add checker for column winning condition" />
   </component>
 </project>

@@ -124,30 +124,50 @@ public class SampleForm {
         System.out.println("The total number of moves is " + this.moves);
 
         if (this.moves >= 5) {
-            for (int rowIndex = 0; rowIndex < 3; rowIndex++) {
-                int[] rowData = this.grid[rowIndex];
+            String winner = checkWinner(this.grid);
 
-                System.out.println("Row " + rowIndex);
+            if (winner != "") {
+                this.setWinnerLabel(winner);
+                return;
+            }
 
-                int rowSum = 0;
+            int[][] gridTransform = new int[3][3];
 
-                for (int rowDataIndex = 0; rowDataIndex < rowData.length; rowDataIndex++) {
-                    int cellData = rowData[rowDataIndex];
-
-                    rowSum += cellData;
-                }
-
-                System.out.println("Row sum is " + rowSum);
-
-                if (rowSum == 3) {
-                    this.setWinnerLabel("X");
-                    break;
-                } else if (rowSum == 0) {
-                    this.setWinnerLabel("O");
-                    break;
+            for (int rowIndex = 0; rowIndex < this.grid.length; rowIndex++) {
+                for(int columnIndex = 0; columnIndex < this.grid[rowIndex].length; columnIndex++) {
+                    gridTransform[columnIndex][rowIndex] = this.grid[rowIndex][columnIndex];
                 }
             }
+
+            winner = checkWinner(gridTransform);
+
+            if (winner != "") {
+                this.setWinnerLabel(winner);
+                return;
+            }
         }
+    }
+
+    private String checkWinner(int[][] checkGrid) {
+        for (int rowIndex = 0; rowIndex < checkGrid.length; rowIndex++) {
+            int[] rowData = checkGrid[rowIndex];
+
+            int rowSum = 0;
+
+            for (int rowDataIndex = 0; rowDataIndex < rowData.length; rowDataIndex++) {
+                int cellData = rowData[rowDataIndex];
+
+                rowSum += cellData;
+            }
+
+            if (rowSum == 3) {
+                return "X";
+            } else if (rowSum == 0) {
+                return "O";
+            }
+        }
+
+        return "";
     }
 
     private void setWinnerLabel(String winner) {
